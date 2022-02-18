@@ -36,9 +36,9 @@ bool CPU::isFlagSet(uint8_t flag)
     return cpuRegisters.F & flag;
 }
 
-void CPU::setFlag(uint8_t flag, bool set)
+void CPU::setFlag(uint8_t flag, bool value)
 {
-    if(set)
+    if(value)
     {
         cpuRegisters.F |= flag;
     }

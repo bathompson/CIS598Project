@@ -57,7 +57,7 @@ class CPU
         void cycle();
     private:
         int clocksRemaining=0;
-        uint8_t PC;
+        uint16_t PC;
         uint16_t SP;
         bool usePrefix;
         Instruction instructsions[INSTRUCTION_COUNT] = {OP_NOP};
@@ -65,7 +65,7 @@ class CPU
         MemoryBus &memoryBus;
         Registers cpuRegisters;
         bool isFlagSet(uint8_t flag);
-        void setFlag(uint8_t flag, bool set);
+        void setFlag(uint8_t flag, bool value);
         //Instructions
         Instruction OP_NOP  = [&](){clocksRemaining = 1;};
 };
