@@ -1,11 +1,16 @@
 #include "MemoryBus.h"
 
-uint8_t MemoryBus::memRead_8(uint8_t addr)
+uint8_t MemoryBus::memRead_8(uint16_t addr)
 {
     return memory[addr];
 }
 
-void MemoryBus::memWrite_8(uint8_t addr, uint8_t value)
+uint16_t MemoryBus::memRead_16(uint16_t addr)
+{
+    return memory[addr+1] << 8 | memory[addr];
+}
+
+void MemoryBus::memWrite_8(uint16_t addr, uint8_t value)
 {
     memory[addr] = value;
 
